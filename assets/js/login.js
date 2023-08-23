@@ -11,7 +11,7 @@ $(document).ready(function() {
 function verifyPassword(password)
 {
     if (password == pass) {
-        setCookieWithExpiration("session","true",2)
+        setCookie("session","true",5)
         showGranted();
     }
     else {
@@ -95,7 +95,7 @@ function loadSite()
 
 // Cookie Controls 
 
-function setCookieWithExpiration(name, value, minutes) {
+function setCookie(name, value, minutes) {
     const expirationDate = new Date();
     expirationDate.setTime(expirationDate.getTime() + (minutes * 60 * 1000));
     const expires = expirationDate.toUTCString();

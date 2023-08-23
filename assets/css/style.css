@@ -152,6 +152,11 @@ footer {
         height: 558px;
     }
 
+    #console-box {
+        width: 992px;
+        height: 558px;
+    }
+
     #passwd {
         width: 104px;
     }
@@ -189,6 +194,11 @@ footer {
         height: 423px;
     }
 
+    #console-box {
+        width: 752px;
+        height: 423px;
+    }
+
     #passwd {
         width: 104px;
     }
@@ -220,6 +230,11 @@ footer {
     }
 
     #video-box {
+        width: 368px;
+        height: 207px;
+    }
+
+    #console-box {
         width: 368px;
         height: 207px;
     }
@@ -276,10 +291,6 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-#video-box {
-    display: none;
-}
-
 .computer-text {
     color: #00FF19;
     font-family:courier, courier new, serif;
@@ -288,6 +299,14 @@ footer {
 #loading-text {
     top: 20px;
     left: 20px;
+}
+
+#video-box {
+    top: 45%;
+}
+
+#console-box {
+    border: 1px solid #00FF19;
 }
 
 #granted-box {

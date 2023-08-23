@@ -1,6 +1,4 @@
-if (!isLogged()){
-    window.location.href = 'login.html';
-}
+if (!isLogged()) window.location.href = 'login.html';
 
 function getCookie(name) {
     const cookies = document.cookie.split(';');
@@ -13,8 +11,12 @@ function getCookie(name) {
     return null;
 }
 
-function setCookie(name, value) {
-    document.cookie = `${name}=${value}; path=/`;
+function setCookie(name, value, minutes) {
+    const expirationDate = new Date();
+    expirationDate.setTime(expirationDate.getTime() + (minutes * 60 * 1000));
+    const expires = expirationDate.toUTCString();
+
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
 
 function isLogged() {
