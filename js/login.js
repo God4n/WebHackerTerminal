@@ -11,6 +11,7 @@ $(document).ready(function() {
 function verifyPassword(password)
 {
     if (password == pass) {
+        setCookieWithExpiration("session","true",2)
         showGranted();
     }
     else {
@@ -91,3 +92,13 @@ function loadSite()
     window.location.href = "/index.html"
 }
 
+
+// Cookie Controls 
+
+function setCookieWithExpiration(name, value, minutes) {
+    const expirationDate = new Date();
+    expirationDate.setTime(expirationDate.getTime() + (minutes * 60 * 1000));
+    const expires = expirationDate.toUTCString();
+
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
