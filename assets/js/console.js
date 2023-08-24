@@ -10,7 +10,7 @@ function fauxTerm(config) {
     var commandHistory = [];
     var currentCommandIndex = -1;
     var maxCommandHistory = config.maxCommandHistory || 100;
-    var autoFocus = config.autoFocus || false;
+    var autoFocus = true;
     var coreCmds = {
       "clear": clear
     };
@@ -201,10 +201,13 @@ function fauxTerm(config) {
     renderTerm();
     
   }
-  var myTerm = new fauxTerm({
+
+  var floppyASCII = "   ___,___,_______,____ \n  |  :::|///./||'||    \\ \n  |  :::|/.///|!!!|     | \n  |   _______________   | \n  |  |:::::::::::::::|  | \n  |  |_______________|  | \n  |  |_______________|  | \n  ||_|     God4n     ||_| \n  |__|_______________|__| \n\n";
+
+  var terminal = new fauxTerm({
     el: document.getElementById("term"),
-    cwd: "guest@dam.pe:/",
-    initialMessage: "Welcome to dam.pe!\n",
+    cwd: "guest@github.io:/",
+    initialMessage: floppyASCII,
     /*
     tags: ['red', 'blue', 'white', 'bold'],
     maxBufferLength: 8192,
@@ -214,17 +217,7 @@ function fauxTerm(config) {
       return false;
     }*/
   });
-  var mySecondTerm = new fauxTerm({
-    el: document.getElementById("term2"),
-    cwd: "guest@dam.pe:/",
-    initialMessage: "Welcome to dam.pe! 2\n",
-    /*
-    autoFocus: false,
-    tags: ['red', 'blue', 'white', 'bold'],
-    maxBufferLength: 8192,
-    maxCommandHistory: 500,
-    cmd: function(argv, argc) {
-      console.log(argv);
-      return false;
-    }*/
-  });
+
+  document.onmousedown = (e) => {
+    e.preventDefault();
+  }

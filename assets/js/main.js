@@ -1,4 +1,4 @@
-// if (!isLogged()) window.location.href = 'login.html';
+if (!isLogged()) window.location.href = 'login.html';
 
 function getCookie(name) {
     const cookies = document.cookie.split(';');

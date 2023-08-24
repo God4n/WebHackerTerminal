@@ -21,26 +21,19 @@
   }
   
   .term {
-    background: #000;
-    color: #aaa;
     font-family: Monaco, monospace;
-    font-weight: 400;
-    font-smooth: never;
-    -webkit-font-smoothing : none;
-    font-size: 10.5pt;
-    padding: 10px;
+    padding: 1em;
     word-wrap: break-word;
     white-space: pre-wrap;
     display: block;
     line-height: 1.5em;
     overflow-y: scroll;
     position: relative;
-    color: #888;
+    color: #00FF19;
   }
   
   .term-focus {
-    text-shadow: none;
-    color: #ccc;
+    color: #00FF19;
   }
   
   .term .red {
@@ -85,18 +78,18 @@
   
   /* Let's get this party started */
   ::-webkit-scrollbar {
-      width: 12px;
+      width: 0px;
   }
    
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
   }
    
   ::-webkit-scrollbar-track {
-    border-radius: 10px;
+    border-radius: 0px;
   }
    
   ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #111;
+    border-radius: 0px;
+    background: #00FF19;
   }
