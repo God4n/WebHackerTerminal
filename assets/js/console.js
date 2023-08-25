@@ -79,8 +79,12 @@ function fauxTerm(config) {
     }
 
     function ls(argv, argc) {
-        files = getFiles();
-        console.log(files);
+        console.log(getFiles());
+        files = [
+            'index.html',
+            'assets.xml',
+            'content.json',
+        ]
         filenames = '';
         for (filename in files) {
             console.log(filename);
