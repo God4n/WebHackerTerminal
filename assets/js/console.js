@@ -79,16 +79,16 @@ function fauxTerm(config) {
     }
 
     function ls(argv, argc) {
-        console.log(getFiles());
-        files = [
-            'index.html',
-            'assets.xml',
-            'content.json',
-        ]
+        console.log(async,getFiles());
+        files = {
+            "index.html":"",
+            'assets.xml':"",
+            'content.json':""
+        }
         filenames = '';
-        for (filename in files) {
+        for (file in Object.keys(files)) {
             console.log(filename);
-            filenames += filename + " ";
+            filenames += file + " ";
         } 
         console.log(filenames)
         return filenames;
