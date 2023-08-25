@@ -79,19 +79,18 @@ function fauxTerm(config) {
     }
 
     function ls(argv, argc) {
-        console.log(async,getFiles());
+        console.log(getFiles());
         files = {
             "index.html":"",
             'assets.xml':"",
             'content.json':""
         }
-        filenames = '';
-        for (file in Object.keys(files)) {
-            console.log(filename);
-            filenames += file + " ";
-        } 
-        console.log(filenames)
-        return filenames;
+        const filenames = Object.keys(files);
+        strfilenames = "";
+        for (file in filenames) {
+            strfilenames += filenames[file] + "  ";
+        }
+        return strfilenames + "\n";
       }
 
 // ---
@@ -236,11 +235,11 @@ function fauxTerm(config) {
     
   }
 
-  var floppyASCII = "   ___,___,_______,____ \n  |  :::|///./||'||    \\ \n  |  :::|/.///|!!!|     | \n  |   _______________   | \n  |  |:::::::::::::::|  | \n  |  |_______________|  | \n  |  |_______________|  | \n  ||_|     God4n     ||_| \n  |__|_______________|__| \n\n";
+  var floppyASCII = "   ___,___,_______,____ \n  |  :::|///./||'||    \\ \n  |  :::|/.///|!!!|     | \n  |   _______________   | \n  |  |:::::::::::::::|  | \n  |  |_______________|  | \n  |  |_______________|  | \n  ||_|     God4n     ||_| \n  |__|_______________|__| \n";
 
   var terminal = new fauxTerm({
     el: document.getElementById("term"),
-    cwd: "guest@github.io:/",
+    cwd: "\nguest@github.io:/",
     initialMessage: floppyASCII,
     /*
     tags: ['red', 'blue', 'white', 'bold'],
