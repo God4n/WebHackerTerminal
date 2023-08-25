@@ -12,7 +12,8 @@ function fauxTerm(config) {
     var maxCommandHistory = config.maxCommandHistory || 100;
     var autoFocus = true;
     var coreCmds = {
-      "clear": clear
+      "clear": clear,
+      "ls": ls
     };
     
     var fauxInput = document.createElement('textarea');
@@ -56,11 +57,32 @@ function fauxTerm(config) {
       }
       return str;
     }
+
+// CMD Functions
     
     function clear(argv, argc) {
       termBuffer = "";
       return "";
     }
+
+    function getFiles() {
+        fetch('assets/content/content.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        return data
+    }
+
+    function ls(argv, argc) {
+        getFiles()
+        return "asd";
+      }
+
+// ---
     
     function isCoreCommand(line) {
       if ( coreCmds.hasOwnProperty(line) ) {
