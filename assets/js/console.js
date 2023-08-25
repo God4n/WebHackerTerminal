@@ -79,11 +79,13 @@ function fauxTerm(config) {
 
     function ls(argv, argc) {
         files = getFiles();
+        console.log(files)
         filenames = '';
         for (filename in files) {
             console.log(filename);
             filenames += filename + " ";
         } 
+        console.log(filenames)
         return filenames;
       }
 
