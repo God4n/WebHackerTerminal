@@ -69,6 +69,7 @@ function fauxTerm(config) {
         fetch('content/content.json')
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             return data;
         })
         .catch(error => {
@@ -79,7 +80,7 @@ function fauxTerm(config) {
 
     function ls(argv, argc) {
         files = getFiles();
-        console.log(files)
+        console.log(files);
         filenames = '';
         for (filename in files) {
             console.log(filename);
