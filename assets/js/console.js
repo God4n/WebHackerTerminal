@@ -66,20 +66,25 @@ function fauxTerm(config) {
     }
 
     function getFiles() {
-        fetch('assets/content/content.json')
+        fetch('content/content.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            return data;
         })
         .catch(error => {
             console.error('Error:', error);
+            return error;
         });
-        return data
     }
 
     function ls(argv, argc) {
-        getFiles()
-        return "asd";
+        files = getFiles();
+        filenames = '';
+        for (filename in files) {
+            console.log(filename);
+            filenames += filename + " ";
+        } 
+        return filenames;
       }
 
 // ---
