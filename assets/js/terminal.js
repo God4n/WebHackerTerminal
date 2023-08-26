@@ -221,22 +221,24 @@ BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
     };
     
     // --------------------------------------------------------------
+    var floppyASCII = "   ___,___,_______,____ \n  |  :::|///./||'||    \\ \n  |  :::|/.///|!!!|     | \n  |   _______________   | \n  |  |:::::::::::::::|  | \n  |  |_______________|  | \n  |  |_______________|  | \n  ||_|     God4n     ||_| \n  |__|_______________|__| \n";
+
     var term = $('.term').terminal((command) => {
         var cmd = $.terminal.parse_command(command);
         if (commands[cmd.name]) {
             commands[cmd.name].call(term, cmd);
-        } else {
+        } else if (cmd.name != '') {
             term.error('Command not found');
         }
     }, {
         checkArity: false,
-        greetings: 'Fake Linux Terminal (see also the [[!;;;;https://fake.terminal.jcubic.pl/]new version])\n[[;white;]TIP]: Use [[;white;]vi] to create files and [[;white;]mkdir] to create directories\n',
+        greetings: floppyASCII,
         prompt: function() {
             return [
-                color('green', 'user@example.com'),
-                ':',
-                color('blue', cwd),
-                '$ '
+                color('green', 'guest@github.io'),
+                color('green', ':'),
+                color('green', cwd),
+                color('green', '$ '),
             ].join('');
         },
         completion: function(string, cb) {
@@ -277,7 +279,7 @@ BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
 function color(name, string) {
     var colors = {
         blue:   '#55f',
-        green:  '#4d4',
+        green:  '#00FF19;',
         grey:   '#999',
         red:    '#A00',
         yellow: '#FF5',
