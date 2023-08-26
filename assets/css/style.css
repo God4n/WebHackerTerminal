@@ -41,7 +41,7 @@ body {
     font-family: 'inspire';
     display: flex !important;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
     max-width:100%;
 }
 

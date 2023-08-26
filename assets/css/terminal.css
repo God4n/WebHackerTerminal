@@ -9,6 +9,11 @@ body {
     height: 100vh;
 }
 
+.terminal-frame {
+    height: 100%;
+    border-width: 0px;
+}
+
 .editor {
 	color: #aaa;
 	background-color: #000;
